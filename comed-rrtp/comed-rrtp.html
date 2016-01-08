@@ -1,0 +1,233 @@
+<!--
+  Copyright 2016 Argonne National Laboratory.
+
+  Licensed under the the BSD 3-Clause License (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://opensource.org/licenses/BSD-3-Clause
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
+ <script type="text/x-red" data-template-name="TomPredPrices">    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>  
+   
+</script>
+
+<script type="text/x-red" data-help-name="TomPredPrices">
+    <p>Use this node to get the predicted prices (cents/kWh) for the next day (24 hours). </p> 
+    <p>Next day predicted prices become available each day at approximately 4:30 PM CT. </p>    
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('TomPredPrices',{
+        category: 'ComEd Pricing',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},                               
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "comed.png",
+        label: function() {
+            return this.name||"Tom24hrPredPrices";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+ <script type="text/x-red" data-template-name="PredPrices">    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>  
+   
+</script>
+
+<script type="text/x-red" data-help-name="PredPrices">
+    <p>Use this node to get the predicted prices (cents/kWh) for the current day (24 hours). </p>     
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('PredPrices',{
+        category: 'ComEd Pricing',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},                               
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "comed.png",
+        label: function() {
+            return this.name||"24hrPredPrices";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="CurntPredPrice">    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>  
+   
+</script>
+
+<script type="text/x-red" data-help-name="CurntPredPrice">
+    <p>Use this node to get the predicted price (cents/kWh) for the current day, current hour. </p>     
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('CurntPredPrice',{
+        category: 'ComEd Pricing',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},                               
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "comed.png",
+        label: function() {
+            return this.name||"CurrentPredPrice";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="CurntPrices">    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>  
+   
+</script>
+
+<script type="text/x-red" data-help-name="CurntPrices">
+    <p>Use this node to get the actual hourly prices (cents/kWh) for the current day up to nearest ending hour.</p> </p>     
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('CurntPrices',{
+        category: 'ComEd Pricing',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},                               
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "comed.png",
+        label: function() {
+            return this.name||"CurrentPrices";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="CurntPrice">    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>  
+   
+</script>
+
+<script type="text/x-red" data-help-name="CurntPrice">
+    <p>Use this node to get the actual hourly price (cents/kWh) for the nearest ending hour of the current day. </p> </p>     
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('CurntPrice',{
+        category: 'ComEd Pricing',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},                               
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "comed.png",
+        label: function() {
+            return this.name||"CurrentPrice";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="CurntHrAvgPrice">    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>  
+   
+</script>
+
+<script type="text/x-red" data-help-name="CurntHrAvgPrice">
+    <p>Use this node to get the running average of 5 min prices (cents/kWh) for the latest hour of the current day, up to the nearest ending 5 minute mark of the hour. </p> </p>     
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('CurntHrAvgPrice',{
+        category: 'ComEd Pricing',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},                               
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "comed.png",
+        label: function() {
+            return this.name||"CurrentHrAvgPrice";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="FiveMinPrices">    
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>  
+   
+</script>
+
+<script type="text/x-red" data-help-name="FiveMinPrices">
+    <p>Use this node to get the actual price (cents/kWh) of energy for the 5 minute intervals for the current day, up to the nearest ending 5 minute mark of the hour.</p>     
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('FiveMinPrices',{
+        category: 'ComEd Pricing',
+        color:"#FFAAAA",
+        defaults: {
+            name: {value:""},                               
+        },        
+        inputs:1,
+        outputs:1,
+        icon: "comed.png",
+        label: function() {
+            return this.name||"FiveMinPrices";
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
