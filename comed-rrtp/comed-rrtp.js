@@ -313,7 +313,7 @@
                 year: parseInt(year[i]),
                 month: parseInt(month[i]) + 1, //January is 0!
                 day: parseInt(day[i]),
-                hour: parseInt(hour[i]),
+                hour: parseInt(hour[i]) + 1,  //12 am is 0!
                 minute: parseInt(min[i]),
                 second: parseInt(sec[i]),
                 predicted_hourly_price: parseFloat(price[i])
