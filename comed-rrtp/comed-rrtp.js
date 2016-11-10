@@ -15,8 +15,7 @@
  **/
 
  module.exports = function(RED) {
-	"use strict";
-    var RED = require(process.env.NODE_RED_HOME+"/red/red");
+	"use strict";    
     var settings = RED.settings;
     var request = require('request'); 
     var cheerio = require('cheerio');   
