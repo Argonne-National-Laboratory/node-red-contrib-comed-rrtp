@@ -43,7 +43,7 @@
     var node = this;
     this.name = n.name;    
     var options = {
-        uri: 'https://rrtp.comed.com/rrtp/ServletFeed?type=daynexttomorrow',        
+        uri: 'https://hourlypricing.comed.com/rrtp/ServletFeed?type=daynexttomorrow',        
         json: true
     };
 
@@ -153,7 +153,7 @@
       console.log('day: '+ dd);
       console.log('date: ' +date);*/
       var options = {
-        uri: 'https://rrtp.comed.com/rrtp/ServletFeed?type=daynexttoday&date='+date,        
+        uri: 'https://hourlypricing.comed.com/rrtp/ServletFeed?type=daynexttoday&date='+date,        
         json: true
       };
 
@@ -246,7 +246,7 @@
       }     
     var date = yyyy.toString()+mm.toString()+dd.toString();    
     var options = {
-        uri: 'https://rrtp.comed.com/rrtp/ServletFeed?type=daynexttoday&date='+date,        
+        uri: 'https://hourlypricing.comed.com/rrtp/ServletFeed?type=daynexttoday&date='+date,        
         json: true
     };
 
@@ -349,7 +349,7 @@
       }     
     var date = yyyy.toString()+mm.toString()+dd.toString();    
     var options = {
-        uri: 'https://rrtp.comed.com/rrtp/ServletFeed?type=day&date='+date,        
+        uri: 'https://hourlypricing.comed.com/rrtp/ServletFeed?type=day&date='+date,        
         json: true
     };
 
@@ -437,7 +437,7 @@
     var node = this;
     this.name = n.name;
     var options = {
-        uri: 'https://rrtp.comed.com/rrtp/ServletFeed?type=instanthourly',        
+        uri: 'https://hourlypricing.comed.com/rrtp/ServletFeed?type=instanthourly',        
         json: true
     };
 
@@ -479,7 +479,7 @@
     var node = this;
     this.name = n.name;
     var options = {
-        uri: 'https://rrtp.comed.com/rrtp/ServletFeed?type=instant',        
+        uri: 'https://hourlypricing.comed.com/rrtp/ServletFeed?type=instant',        
         json: true
     };
 
@@ -521,7 +521,7 @@
     var node = this;
     this.name = n.name;      
     var options = {
-        uri: 'https://rrtp.comed.com/rrtp/ServletFeed?type=pricechartfiveminute',        
+        uri: 'https://hourlypricing.comed.com/rrtp/ServletFeed?type=pricechartfiveminute',        
         json: true
     };
 
