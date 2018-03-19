@@ -25,7 +25,7 @@
     var hourRegEx = /\[Date.UTC\(\d{4},\d{1,2},\d{1,2},(\d{1,2})/g;
     var minRegEx = /\[Date.UTC\(\d{4},\d{1,2},\d{1,2},\d{1,2},(\d{1,2})/g;
     var secRegEx = /\[Date.UTC\(\d{4},\d{1,2},\d{1,2},\d{1,2},\d{1,2},(\d{1,2})\)/g;
-    var priceRegEx = /\[Date.UTC\(\d{4},\d{1,2},\d{1,2},\d{1,2},\d{1,2},\d{1,2}\),\s(\d{1,4}.\d{1,4})\]./g;      
+    var priceRegEx = /\[Date.UTC\(\d{4},\d{1,2},\d{1,2},\d{1,2},\d{1,2},\d{1,2}\),\s(-?\d{1,4}.\d{1,4})\]/g;      
 
    function getMatches(string, regex, index) {
         index || (index = 1); // default to the first capturing group
