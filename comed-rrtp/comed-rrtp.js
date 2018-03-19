@@ -447,7 +447,7 @@
 
       request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-        var priceRegEx = /(\d{1,4}.\d{1,4})/g;
+        var priceRegEx = /(-?\d{1,4}.\d{1,4})/g;
         var timeRegEx = /(\d{1,2}-\d{1,2}\s\w{1,2}\s\w{1,3})/g;         
         var $ = cheerio.load(body);
         var list = $('p').map(function() {
@@ -489,7 +489,7 @@
 
       request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-        var priceRegEx = /(\d{1,4}.\d{1,4})/g;
+        var priceRegEx = /(-?\d{1,4}.\d{1,4})/g;
         var timeRegEx = /(\d{1,2}\:\d{1,2}\s\w{1,2}\s\w{1,3})/g;         
         var $ = cheerio.load(body);
         var list = $('p').map(function() {
